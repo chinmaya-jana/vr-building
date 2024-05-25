@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Project phase 2 [SCIS]</title>
+		<script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+		<script src="./JavaScript/room.js"></script>
+		<script src="./JavaScript/stair.js"></script>
+		<script src="./JavaScript/video_play_pause_control.js"></script>
+		<script src="./JavaScript/chair.js"></script>
+		<script src="./JavaScript/presentationSlide.js"></script>
+		<script src="./JavaScript/geometry.js"></script>
+		<script src="./JavaScript/scis_poster.js"></script>
+	</head>
+	<body>
+		<a-scene>
+			<a-sky color="#87bbe8"></a-sky>
+			<a-entity cursor="rayOrigin: mouse"></a-entity>
+			<a-assets>
+				<img id="ground" src="./Images/grass-ground-image2.jpg">
+				<img id="slide-1" src="./Images/1.png" class="clickable">
+      			<img id="slide-2" src="./Images/2.png" class="clickable">
+      			<img id="slide-3" src="./Images/3.png" class="clickable">
+      			<img id="slide-4" src="./Images/4.png" class="clickable">
+      			<img id="slide-5" src="./Images/5.png" class="clickable">
+      			<img id="slide-6" src="./Images/6.png" class="clickable">
+      			<img id="slide-7" src="./Images/7.png" class="clickable">
+      			<img id="next-slide" src="./Images/next.png">
+      			<img id="previous-slide" src="./Images/previous.png">
+				<video id="sun" 
+							 src="./Videos/sun.mp4" 
+							 loop="true">
+				</video>
+			</a-assets>
+			<a-plane width="50" 
+							 height="25" 
+							 rotation="-90 0 0"  
+							 side="double" 
+							 src="#ground" 
+							 repeat="50 25">
+				<!--Building Center base-->
+				<a-box color="gray"
+							 width="8.4" 
+							 height="6" 
+							 position="0 1.5 0.5">
+					<!--center back base-->
+					<a-box color="gray" 
+								 width="24" 
+								 height="5" 
+								 position="0 5.5 0">
+					</a-box>
+					<!--stair base [back side]-->
+					<a-box color="gray"
+								 width="8.4" 
+								 height="1.65" 
+								 position="0 8.825" 0>
+					</a-box>
+					<!--center front base-->
+					<a-box color="gray"
+								 width="6" 
+								 height="2" 
+								 position="0 -4 0">
+					</a-box>
+					<!--building right-->
+					<a-box color="gray" 
+								 width="2" 
+								 height="1.2" 
+								 position="-7 2.4 0">
+					</a-box>
+					<a-box color="gray" 
+								 width="9" 
+								 height="6" 
+								 position="-12.5 0 0">
+					</a-box>
+					<a-box color="gray"
+								 width="10" 
+								 height="2" 
+								 position="-17 4 0">
+					</a-box>
+					<a-box color="gray"
+								 width="5" 
+								 height="8" 
+								 position="-19.5 -1 0">
+					</a-box>
+					<a-box color="gray"
+								 width="7" 
+								 height="5" 
+								 position="-18.5 7.5 0">
+					</a-box>
+					<!--building left-->
+					<a-box color="gray" 
+								 width="2" 
+								 height="1.2" 
+								 position="7 2.4 0">
+					</a-box>
+					<a-box color="gray" 
+								 width="9" 
+								 height="6" 
+								 position="12.5 0 0">
+					</a-box>
+					<a-box color="gray"
+								 width="5" 
+								 height="2" 
+								 position="14.5 4 0">
+					</a-box>
+					<a-box color="gray"
+								 width="3" 
+								 height="3" 
+								 position="15.5 6.5 0">
+					</a-box>
+					<a-box color="gray"
+								 width="7" 
+								 height="15" 
+								 position="20.5 2.5 0">
+					</a-box>
+				</a-box>
+			</a-plane>
+			<!--building ground floor rooms-->
+			<!--buliding RIGHT side-->
+			<!--BACK-->
+			<!--Sai Sir Cabin-->
+			<a-room r_color="lightblue" 
+							r_position="-6 1.001 -8" 
+							r_length="4" 
+							r_breath="3" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_ceilling_color="gray" 
+							south_door="true" 
+							door_width="1.1" 
+							door_height="2" 
+							door_position="-0.8" 
+							n_wall_window="true"
+							n_wall_window_position="0 0.5" 
+							n_wall_window_width="3" 
+							n_wall_window_height="1.5">
+			</a-room>
+			<!--Space-->
+			<a-room r_color="lightblue" 
+							r_position="-10 1.001 -8" 
+							r_length="4" 
+							r_breath="3" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_ceilling_color="gray" 
+							n_wall_window="true"
+							n_wall_window_position="0 0.5" 
+							n_wall_window_width="3" 
+							n_wall_window_height="1.5">
+			</a-room>
+			<!--To close free space infront of Dean Cabin-->
+			<a-room r_color="lightblue" 
+							r_length="3" 
+							r_breath="0.2" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_ceilling_color="gray" 
+							r_position="-13.5 1.001 -6.6" 
+							n_wall_window="true" 
+							n_wall_window_width="2" 
+							n_wall_window_height="1.5" 
+							n_wall_window_position="0 0.5">
+			</a-room>
+			<!--Toilet-->
+			<a-room r_color="lightblue" 
+							r_position="-18.5 1.001 -9" 
+							r_length="7" 
+							r_breath="5" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_ceilling_color="gray" 
+							south_door="true" 
+							door_width="1.5" 
+							door_height="2" 
+							door_position="-0.8" 
+							e_wall_window="true" 
+							e_wall_window_width="0.7" 
+							e_wall_window_height="1.2" 
+							e_wall_window_position="-0.7 0.5" 
+							w_wall_window="true" 
+							w_wall_window_quantity="2" 
+							w_wall_window_width="2" 
+							w_wall_window_height="1.5" 
+							w_wall_window_position="0 0.5">
+			</a-room>
+			<!--Front-->
+			<!--right side of building free space-->
+			<a-room r_length="1.8" 
+							r_breath="0.2" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_color="lightblue" 
+							r_ceilling_color="gray" 
+							r_position="-5.1 1.001 -4.4" 
+							r_rotation="0 180 0" 
+							n_wall_window="true" 
+							n_wall_window_width="1.4" 
+							n_wall_window_height="1.5" 
+							n_wall_window_position="0 0.5">
+			</a-room>
+			<!--Electric room-->
+			<a-room r_color="lightblue" 
+							r_length="2" 
+							r_breath="1.2" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_ceilling_color="gray" 
+							r_position="-7 1.001 -3.9" 
+							r_rotation="0 180 0" 
+							south_door="true" 
+							door_width="0.8" 
+							door_height="2">
+			</a-room>
+			<!--Dean Cabin-->
+			<a-room r_color="lightblue" 
+							r_length="9" 
+							r_breath="6" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_ceilling_color="gray" 
+							r_position="-12.5 1.001 -1.5" 
+							r_rotation="0 180 0" 
+							south_door="true" 
+							door_width="1.5" 
+							door_height="2" 
+							door_position="-0.5" 
+							n_wall_window="true" 
+							n_wall_window_quantity="3" 
+							n_wall_window_position="0 0.5" 
+							n_wall_window_width="2" 
+							n_wall_window_height="1.5">
+				<!--toilet-->
+				<a-room r_color="lightblue" 
+								r_length="3" 
+								r_breath="0.2" 
+								r_height="3.3" 
+								r_thickness="0.2" 
+								r_ceilling_color="gray" 
+								r_position="-11.1 1.001 -0.2" 
+								r_rotation="0 -90 0" 
+								n_wall_window="true" 
+								n_wall_window_width="0.8" 
+								n_wall_window_height="2" 
+								n_wall_window_position="1 -1">
+					<a-box width="2.8" 
+							 height="3.3" 
+							 depth="0.2" 
+							 color="lightblue" 
+							 position="-9.6 2.65 -1.6">
+				</a-box>
+				</a-room>
+			</a-room>
+			<!--Conference hall-->
+			<a-room r_color="lightblue" 
+							r_length="5" 
+							r_breath="8" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_ceilling_color="gray" 
+							r_position="-19.5 1.001 -0.5" 
+							r_rotation="0 180 0" 
+							south_door="true" 
+							door_width="1.5" 
+							door_height="2" 
+							e_wall_window="true" 
+							e_wall_window_quantity="3" 
+							e_wall_window_width="2" 
+							e_wall_window_height="1.5" 
+							e_wall_window_position="0 0.5" 
+							w_wall_window="true" 
+							w_wall_window_width="1.5" 
+							w_wall_window_height="1.5" 
+							w_wall_window_position="0.94 0.5" 
+							n_wall_window="true" 
+							n_wall_window_quantity="2" 
+							n_wall_window_position="0 0.5" 
+							n_wall_window_width="2" 
+							n_wall_window_height="1.5">
+			</a-room>
+			<!--building LEFT side-->
+			<!--BACK-->
+			<!--Naveen Sir Cabin-->
+			<a-room r_color="lightblue" 
+							r_position="6 1.001 -8" 
+							r_length="4" 
+							r_breath="3" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_ceilling_color="gray" 
+							south_door="true" 
+							door_width="1.1" 
+							door_height="2" 
+							door_position="0.8" 
+							n_wall_window="true"
+							n_wall_window_position="0 0.5" 
+							n_wall_window_width="3" 
+							n_wall_window_height="1.5">
+			</a-room>
+			<!--faculty cabin-->
+			<a-room r_color="lightblue" 
+							r_position="10 1.001 -8" 
+							r_length="4" 
+							r_breath="3" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_ceilling_color="gray" 
+							south_door="true" 
+							door_width="1.1" 
+							door_height="2" 
+							door_position="-0.8" 
+							n_wall_window="true"
+							n_wall_window_position="0 0.5" 
+							n_wall_window_width="3" 
+							n_wall_window_height="1.5">
+			</a-room>
+			<!--To close free space left side of faculty room-->
+			<a-room r_color="lightblue" 
+							r_length="2" 
+							r_breath="0.2" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_ceilling_color="gray" 
+							r_position="13 1.001 -6.6" 
+							n_wall_window="true" 
+							n_wall_window_width="1.6" 
+							n_wall_window_height="1.5" 
+							n_wall_window_position="0 0.5">
+			</a-room>
+			<!--store room-->
+			<a-room r_color="lightblue" 
+							r_position="15.5 1.001 -8" 
+							r_length="3" 
+							r_breath="3" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_ceilling_color="gray" 
+							south_door="true" 
+							door_width="1" 
+							door_height="2" 
+							door_position="-0.8" 
+							n_wall_window="true"
+							n_wall_window_position="0 0.5" 
+							n_wall_window_width="2" 
+							n_wall_window_height="1.5">
+			</a-room>
+			<!--Toilet room-->
+			<a-room r_color="lightblue" 
+							r_position="18.5 1.001 -8" 
+							r_length="3" 
+							r_breath="3" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_ceilling_color="gray" 
+							south_door="true" 
+							door_width="1" 
+							door_height="2" 
+							door_position="0.8" 
+							n_wall_window="true"
+							n_wall_window_position="0 0.9" 
+							n_wall_window_width="2" 
+							n_wall_window_height="0.7" 
+							e_wall_window="true" 
+							e_wall_window_position="0 0.9" 
+							e_wall_window_width="2.5" 
+							e_wall_window_height="0.7">
+			</a-room>
+			<!--To close free space infront of the lab room-->
+			<a-room r_color="lightblue" 
+							r_length="2" 
+							r_breath="0.2" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_ceilling_color="gray" 
+							r_position="19.9 1.001 -5.5" 
+							r_rotation="0 -90 0" 
+							n_wall_window="true" 
+							n_wall_window_width="1.6" 
+							n_wall_window_height="1.5" 
+							n_wall_window_position="0 0.5">
+			</a-room>
+			<!--FRONT-->
+			<!--left side of building free space-->
+			<a-room r_length="1.8" 
+							r_breath="0.2" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_color="lightblue" 
+							r_ceilling_color="gray" 
+							r_position="5.1 1.001 -4.4" 
+							r_rotation="0 180 0" 
+							n_wall_window="true" 
+							n_wall_window_width="1.4" 
+							n_wall_window_height="1.5" 
+							n_wall_window_position="0 0.5">
+			</a-room>
+			<!--Electric room-->
+			<a-room r_color="lightblue" 
+							r_length="2" 
+							r_breath="1.2" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_ceilling_color="gray" 
+							r_position="7 1.001 -3.9" 
+							r_rotation="0 180 0" 
+							south_door="true" 
+							door_width="0.8" 
+							door_height="2">
+			</a-room>
+			<!--Faculty room-->
+			<a-room r_color="lightblue" 
+							r_length="3" 
+							r_breath="6" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_ceilling_color="gray" 
+							r_position="9.5 1.001 -1.5" 
+							r_rotation="0 180 0" 
+							south_door="true" 
+							door_width="1.1" 
+							door_height="2"
+							door_position="-0.8"
+							n_wall_window="true" 
+							n_wall_window_position="0 0.5" 
+							n_wall_window_width="2" 
+							n_wall_window_height="1.5">
+			</a-room>
+			<!--Faculty room 2-->
+			<a-room r_color="lightblue" 
+							r_length="3" 
+							r_breath="6" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_ceilling_color="gray" 
+							r_position="12.5 1.001 -1.5" 
+							r_rotation="0 180 0" 
+							south_door="true" 
+							door_width="1.1" 
+							door_height="2"
+							door_position="0"
+							n_wall_window="true" 
+							n_wall_window_position="0 0.5" 
+							n_wall_window_width="2" 
+							n_wall_window_height="1.5">
+			</a-room>
+			<!--Faculty room 3-->
+			<a-room r_color="lightblue" 
+							r_length="3" 
+							r_breath="6" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_ceilling_color="gray" 
+							r_position="15.5 1.001 -1.5" 
+							r_rotation="0 180 0" 
+							south_door="true" 
+							door_width="1.1" 
+							door_height="2"
+							door_position="-0.8" 
+							n_wall_window="true" 
+							n_wall_window_position="0 0.5" 
+							n_wall_window_width="2" 
+							n_wall_window_height="1.5">
+			</a-room>
+			<!--lab room-->
+			<a-room r_color="lightblue" 
+							r_length="7" 
+							r_breath="8" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_ceilling_color="gray" 
+							r_position="20.5 1.001 -0.5" 
+							r_rotation="0 180 0" 
+							south_door="true" 
+							door_width="1.1" 
+							door_height="2" 
+							door_position="0.9" 
+							e_wall_window="true" 
+							e_wall_window_width="1.5" 
+							e_wall_window_height="1.5" 
+							e_wall_window_position="-0.94 0.5"
+							w_wall_window="true" 
+							w_wall_window_quantity="3"
+							w_wall_window_width="2" 
+							w_wall_window_height="1.5" 
+							w_wall_window_position="0 0.5"
+							n_wall_window="true" 
+							n_wall_window_quantity="2" 
+							n_wall_window_position="0 0.5" 
+							n_wall_window_width="2.5" 
+							n_wall_window_height="1.5">
+			</a-room>
+			<!--building 1st floor rooms-->
+			<!--buliding RIGHT side-->
+			<!--BACK-->
+			<!--Nagendra Sir Cabin-->
+			<a-room r_color="lightblue" 
+							r_position="-6 4.502 -8" 
+							r_length="4" 
+							r_breath="3" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_ceilling_color="gray" 
+							south_door="true" 
+							door_width="1.1" 
+							door_height="2" 
+							door_position="0.8" 
+							n_wall_window="true"
+							n_wall_window_position="0 0.5" 
+							n_wall_window_width="3" 
+							n_wall_window_height="1.5">
+			</a-room>
+			<!--Udgata Sir Cabin-->
+			<a-room r_color="lightblue" 
+							r_position="-10 4.502 -8" 
+							r_length="4" 
+							r_breath="3" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_ceilling_color="gray" 
+							south_door="true" 
+							door_width="1.1" 
+							door_height="2" 
+							door_position="0.8" 
+							n_wall_window="true"
+							n_wall_window_position="0 0.5" 
+							n_wall_window_width="3" 
+							n_wall_window_height="1.5">
+			</a-room>
+			<!--To close free space after the Udgata sir cabin-->
+			<a-room r_color="lightblue" 
+							r_length="3" 
+							r_breath="0.2" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_ceilling_color="gray" 
+							r_position="-13.5 4.502 -6.6" 
+							n_wall_window="true" 
+							n_wall_window_width="2" 
+							n_wall_window_height="1.5" 
+							n_wall_window_position="0 0.5">
+			</a-room>
+			<!--Toilet-->
+			<a-room r_color="lightblue" 
+							r_position="-18.5 4.502 -9" 
+							r_length="7" 
+							r_breath="5" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_ceilling_color="gray" 
+							south_door="true" 
+							door_width="1.5" 
+							door_height="2" 
+							door_position="-0.8" 
+							e_wall_window="true" 
+							e_wall_window_width="0.7" 
+							e_wall_window_height="1.2" 
+							e_wall_window_position="-0.7 0.5" 
+							w_wall_window="true" 
+							w_wall_window_quantity="2" 
+							w_wall_window_width="2" 
+							w_wall_window_height="1.5" 
+							w_wall_window_position="0 0.5">
+			</a-room>
+			<!--FRONT-->
+			<!--right side of building free space-->
+			<a-room r_length="1.8" 
+							r_breath="0.2" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_color="lightblue" 
+							r_ceilling_color="gray" 
+							r_position="-5.1 4.502 -4.4" 
+							r_rotation="0 180 0" 
+							n_wall_window="true" 
+							n_wall_window_width="1.4" 
+							n_wall_window_height="1.5" 
+							n_wall_window_position="0 0.5">
+			</a-room>
+			<!--Electric room-->
+			<a-room r_color="lightblue" 
+							r_length="2" 
+							r_breath="1.2" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_ceilling_color="gray" 
+							r_position="-7 4.502 -3.9" 
+							r_rotation="0 180 0" 
+							south_door="true" 
+							door_width="0.8" 
+							door_height="2">
+			</a-room>
+			<!--Kare sir cabin-->
+			<a-room r_color="lightblue" 
+							r_length="3" 
+							r_breath="6" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_ceilling_color="gray" 
+							r_position="-9.5 4.502 -1.5" 
+							r_rotation="0 180 0" 
+							south_door="true" 
+							door_width="1.1" 
+							door_height="2" 
+							door_position="1" 
+							n_wall_window="true" 
+							n_wall_window_width="2" 
+							n_wall_window_height="1.5" 
+							n_wall_window_position="1 0.5">
+			</a-room>
+			<!--Ganiwada Atharvam sir cabin-->
+			<a-room r_color="lightblue" 
+							r_length="3" 
+							r_breath="6" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_ceilling_color="gray" 
+							r_position="-12.5 4.502 -1.5" 
+							r_rotation="0 180 0" 
+							south_door="true" 
+							door_width="1.1" 
+							door_height="2" 
+							door_position="0" 
+							n_wall_window="true" 
+							n_wall_window_width="2" 
+							n_wall_window_height="1.5" 
+							n_wall_window_position="0 0.5">
+			</a-room>
+			<!--faculty cabin-->
+			<a-room r_color="lightblue" 
+							r_length="3" 
+							r_breath="6" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_ceilling_color="gray" 
+							r_position="-15.5 4.502 -1.5" 
+							r_rotation="0 180 0" 
+							south_door="true" 
+							door_width="1.1" 
+							door_height="2" 
+							door_position="0" 
+							n_wall_window="true" 
+							n_wall_window_width="2" 
+							n_wall_window_height="1.5" 
+							n_wall_window_position="-1 0.5">
+			</a-room>
+			<!--Lab room-->
+			<a-room r_color="lightblue" 
+							r_length="5" 
+							r_breath="8" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_ceilling_color="gray" 
+							r_position="-19.5 4.502 -0.5" 
+							r_rotation="0 180 0" 
+							south_door="true" 
+							door_width="1.5" 
+							door_height="2" 
+							e_wall_window="true" 
+							e_wall_window_quantity="3" 
+							e_wall_window_width="2" 
+							e_wall_window_height="1.5" 
+							e_wall_window_position="0 0.5" 
+							w_wall_window="true" 
+							w_wall_window_width="1.5" 
+							w_wall_window_height="1.5" 
+							w_wall_window_position="0.94 0.5" 
+							n_wall_window="true" 
+							n_wall_window_quantity="2" 
+							n_wall_window_position="0 0.5" 
+							n_wall_window_width="2" 
+							n_wall_window_height="1.5">
+			</a-room>
+			<!--right side end wall of the corrider-->
+			<a-room r_color="lightblue" 
+							r_length="2" 
+							r_breath="0.2" 
+							r_thickness="0.2" 
+							r_height="3.3" 
+							r_ceilling_color="gray" 
+							r_position="-21.9 4.502 -5.5" 
+							r_rotation="0 -90 0" 
+							n_wall_window="true" 
+							n_wall_window_width="1.6" 
+							n_wall_window_height="1.5" 
+							n_wall_window_position="0 0.5">
+			</a-room>
+			<!--building LEFT side-->
+			<!--BACK-->
+			<!--Satish sir cabin-->
+			<a-room r_color="lightblue" 
+							r_position="6 4.502 -8" 
+							r_length="4" 
+							r_breath="3" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_ceilling_color="gray" 
+							south_door="true" 
+							door_width="1.1" 
+							door_height="2" 
+							door_position="0.8" 
+							n_wall_window="true"
+							n_wall_window_position="0 0.5" 
+							n_wall_window_width="3" 
+							n_wall_window_height="1.5">
+			</a-room>
+			<!--Toilet-->
+			<a-room r_color="lightblue" 
+							r_position="11 4.502 -8" 
+							r_length="6" 
+							r_breath="3" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_ceilling_color="gray" 
+							n_wall_window="true" 
+							n_wall_window_quantity="2" 
+							n_wall_window_width="2" 
+							n_wall_window_height="0.7" 
+							n_wall_window_position="0 0.8">
+				<!--wash room-->
+				<!--door-->
+				<a-box width="0.8" 
+							 height="2" 
+							 depth="0.2" 
+							 color="green" 
+							 position="9.6 5.5 -7" 
+							 opacity="0.4">
+				</a-box>
+				<!--door upper wall-->
+				<a-box width="0.8" 
+							 height="1.3" 
+							 depth="0.2" 
+							 color="lightblue" 
+							 position="9.6 7.151 -7">
+				</a-box>
+				<!--door right wall-->
+				<a-box width="1" 
+							 height="3.3" 
+							 depth="0.2" 
+							 color="lightblue" 
+							 position="8.7 6.15 -7">
+				</a-box>
+				<!--separator-->
+				<a-box width="2.2" 
+							 height="3.3" 
+							 depth="0.2" 
+							 color="lightblue" 
+							 rotation="0 90 0" 
+							 position="11 6.15 -8.2">
+				</a-box>
+				<a-box width="2" 
+							 height="3.3" 
+							 depth="0.2" 
+							 color="lightblue" 
+							 position="11 6.15 -7">
+				</a-box>
+				<!--toilet room-->
+				<!--door-->
+				<a-box width="0.8" 
+							 height="2" 
+							 depth="0.2" 
+							 color="green" 
+							 position="12.4 5.5 -7" 
+							 opacity="0.4">
+				</a-box>
+				<!--door upper wall-->
+				<a-box width="0.8" 
+							 height="1.3" 
+							 depth="0.2" 
+							 color="lightblue" 
+							 position="12.4 7.151 -7">
+				</a-box>
+				<!--door left wall-->
+				<a-box width="1" 
+							 height="3.3" 
+							 depth="0.2" 
+							 color="lightblue" 
+							 position="13.3 6.15 -7">
+				</a-box>
+			</a-room>
+			<!--corrider: here I make room to close the corrider-->
+			<a-room r_length="3" 
+							r_breath="0.2" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_color="lightblue" 
+							r_ceilling_color="gray" 
+							r_position="15.5 4.502 -9.4" 
+							n_wall_window="true" 
+							n_wall_window_width="2" 
+							n_wall_window_height="1.5" 
+							n_wall_window_position="0 0.5">
+			</a-room>
+			<!--FRONT-->
+			<!--left side of building free space-->
+			<a-room r_length="1.8" 
+							r_breath="0.2" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_color="lightblue" 
+							r_ceilling_color="gray" 
+							r_position="5.1 4.502 -4.4" 
+							r_rotation="0 180 0" 
+							n_wall_window="true" 
+							n_wall_window_width="1.4" 
+							n_wall_window_height="1.5" 
+							n_wall_window_position="0 0.5">
+			</a-room>
+			<!--Electric room-->
+			<a-room r_color="lightblue" 
+							r_length="2" 
+							r_breath="1.2" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_ceilling_color="gray" 
+							r_position="7 4.502 -3.9" 
+							r_rotation="0 180 0" 
+							south_door="true" 
+							door_width="0.8" 
+							door_height="2">
+			</a-room>
+			<!--Satish sir's lab-->
+			<a-room r_color="lightblue" 
+							r_position="11 4.502 -1.5" 
+							r_rotation="0 180 0" 
+							r_length="6" 
+							r_breath="6" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_ceilling_color="gray" 
+							south_door="true" 
+							door_width="1.5" 
+							door_height="2" 
+							door_position="-0.7" 
+							n_wall_window="true" 
+							n_wall_window_quantity="2" 
+							n_wall_window_position="0 0.5" 
+							n_wall_window_width="2" 
+							n_wall_window_height="1.5">
+			</a-room>
+			<!--corrider: here I make room to close the corider-->
+			<a-room r_length="3" 
+							r_breath="0.2" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_color="lightblue" 
+							r_ceilling_color="gray" 
+							r_position="15.5 4.502 1.4" 
+							n_wall_window="true" 
+							n_wall_window_width="2" 
+							n_wall_window_height="1.5" 
+							n_wall_window_position="0 0.5">
+			</a-room>
+			<!--^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-->
+			<!--Seminar room -->
+			<a-room r_color="lightblue" 
+							r_length="15" 
+							r_breath="7" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_ceilling_color="gray" 
+							r_position="20.5 4.502 -4" 
+							r_rotation="0 -90 0" 
+							e_wall_window="true" 
+							e_wall_window_quantity="2" 
+							e_wall_window_width="2.5" 
+							e_wall_window_height="1.5" 
+							e_wall_window_position="0 0.5" 
+							n_wall_window="true" 
+							n_wall_window_quantity="6" 
+							n_wall_window_position="0 0.5" 
+							n_wall_window_width="2" 
+							n_wall_window_height="1.5">
+				<!--Screen-->
+				<a-box width="4" 
+							 height="2" 
+							 depth="0.05"
+							 position="20.5 6.5 -11.25">
+					<a-video src="#sun" 
+									 id="videoControls" 
+									 class="vplay" 
+									 width="3.8" 
+									 height="1.8" 
+									 position="0 0 0.03" 
+									 play-pause>
+					</a-video>
+				</a-box>
+				<a-box color="lightblue" 
+							 width="4.8" 
+							 height="3.3" 
+							 depth="0.2" 
+							 position="17.1 6.152 -8.9" 
+							 rotation="0 90 0">
+				</a-box>
+				<!--Gate 1-->
+				<a-box color="green" 
+							 width="2" 
+							 height="2" 
+							 depth="0.2" 
+							 position="17.1 5.5 -5.5" 
+							 rotation="0 90 0" 
+							 opacity="0.4">
+				</a-box>
+				<a-box color="lightblue" 
+							 width="2" 
+							 height="1.3" 
+							 depth="0.2" 
+							 position="17.1 7.151 -5.5" 
+							 rotation="0 90 0">
+				</a-box>
+				<a-box color="lightblue" 
+							 width="3" 
+							 height="3.3" 
+							 depth="0.2" 
+							 position="17.1 6.152 -3" 
+							 rotation="0 90 0">
+				</a-box>
+				<!--gate 2-->
+				<a-box color="green" 
+							 width="1.5" 
+							 height="2" 
+							 depth="0.2" 
+							 position="17.1 5.5 -0.75" 
+							 rotation="0 90 0" 
+							 opacity="0.4">
+				</a-box>
+				<a-box color="lightblue" 
+							 width="1.5" 
+							 height="1.3" 
+							 depth="0.2" 
+							 position="17.1 7.151 -0.75" 
+							 rotation="0 90 0">
+				</a-box>
+				<a-box color="lightblue" 
+							 width="1.65" 
+							 height="3.3" 
+							 depth="0.2" 
+							 position="17.1 6.152 0.825" 
+							 rotation="0 90 0">
+				</a-box>
+				<!--window of seminar hall-->
+				<!--code start-->
+				<a-box color="green" 
+							 width="1.5" 
+							 height="1.5" 
+							 depth="0.2" 
+							 position="17.1 6.59 2.4" 
+							 rotation="0 90 0"
+							 opacity="0.4">
+				</a-box>
+				<a-box color="lightblue" 
+							 width="1.5" 
+							 height=".46" 
+							 depth="0.2" 
+							 position="17.1 7.571 2.4" 
+							 rotation="0 90 0">
+				</a-box>
+				<a-box color="lightblue" 
+							 width="1.5" 
+							 height="1.34" 
+							 depth="0.2" 
+							 position="17.1 5.17 2.4" 
+							 rotation="0 90 0">
+				</a-box>
+				<a-box color="lightblue" 
+							 width="0.15" 
+							 height="3.3" 
+							 depth="0.2" 
+							 position="17.1 6.15 3.225" 
+							 rotation="0 90 0">
+				</a-box>
+				<!--code end-->
+			</a-room>
+			<!--^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-->
+			<!--ground floor remaining ceilings-->
+			<a-box color="gray" 
+						 width="46" 
+						 height="2" 
+						 depth="0.2"
+						 position="1 4.4 -5.5"
+						 rotation="-90 0 0">
+			</a-box>
+			<a-box color="gray" 
+						 width="4" 
+						 height="3" 
+						 depth="0.2" 
+						 position="22 4.4 -8"
+						 rotation="-90 0 0">
+			</a-box>
+			<a-box color="gray" 
+						 width="7" 
+						 height="2" 
+						 depth="0.2" 
+						 position="20.5 4.4 -10.5"
+						 rotation="-90 0 0">
+			</a-box>
+			<a-box color="gray" 
+						 width="2" 
+						 height="3" 
+						 depth="0.2" 
+						 position="13 4.4 -8"
+						 rotation="-90 0 0">
+			</a-box>
+			<!--Piller 1-->
+			<a-box color="lightblue" 
+						 height="3.3" 
+						 position="23.5 2.65 -11">
+			</a-box>
+			<!--Piller 2-->
+			<a-box color="lightblue" 
+						 height="3.3" 
+						 position="17.5 2.65 -11">
+			</a-box>
+			<!--1st floor remaining ceiling-->
+			<!--left: infront of seminar hall-->
+			<a-box width="10.6" 
+						 height="3" 
+						 depth="0.2" 
+						 position="15.5 7.902 -4" 
+						 rotation="-90 90 0" 
+						 color="gray">
+			</a-box>
+			<!--left side corrider-->
+			<a-box width="10" 
+						 height="2" 
+						 depth="0.2" 
+						 position="9 7.902 -5.5" 
+						 rotation="-90 0 0" 
+						 color="gray">
+			</a-box>
+			<!--Right side remaining ceiling-->
+			<a-box color="gray"
+						 width="17.8" 
+						 height="2" 
+						 depth="0.2" 
+						 position="-12.9 7.902 -5.5" 
+						 rotation="-90 0 0">
+			</a-box>
+			<!--Main corrider upper ceiling-->
+			<a-box width="8" 
+						 height="8.6" 
+						 depth="0.2" 
+						 position="0 7.902 -3"
+						 rotation="-90 0 0" 
+						 color="gray">
+			</a-box>
+			<!--front of stair [ceiling]-->
+			<a-box width="8" 
+						 height="0.8" 
+						 depth="0.2" 
+						 color="gray" 
+						 position="0 4.402 -6.9" 
+						 rotation="-90 0 0">
+			</a-box>
+			<!--ceiling of stair-->
+			<a-box width="2.2" 
+						 height="3.65" 
+						 depth="0.2" 
+						 position="-2.9 7.902 -9.125" 
+						 rotation="-90 0 0" 
+						 color="gray">
+			</a-box>
+			<!--stair upper room-->
+			<!--back wall-->
+			<a-room r_length="6.2" 
+							r_breath="0.2" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_color="lightblue" 
+							r_ceilling_color="gray" 
+							r_position="1.1 8.003 -11.05" 
+							n_wall_window="true" 
+							n_wall_window_width="1" 
+							n_wall_window_height="1.2" 
+							n_wall_window_position="-0.85 0.9">
+				<!--ceiling-->
+				<a-box color="gray" 
+							 width="5.8" 
+							 height="3.65" 
+							 depth="0.2" 
+							 position="1.1 11.402 -9.125" 
+							 rotation="-90 0 0">
+				</a-box>
+				<!--right wall-->
+				<a-room r_length="3.65" 
+							r_breath="0.2" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_color="lightblue" 
+							r_ceilling_color="gray" 
+							r_position="-1.9 8.003 -9.125" 
+							r_rotation="0 90 0">
+				</a-room>
+				<!--left wall-->
+				<a-room r_length="3.65" 
+							r_breath="0.2" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_color="lightblue" 
+							r_ceilling_color="gray" 
+							r_position="4.1 8.003 -9.125" 
+							r_rotation="0 -90 0">
+				</a-room>
+				<!--front door wall-->
+				<a-room r_length="6.2" 
+								r_breath="0.2" 
+								r_height="3.3" 
+								r_thickness="0.2" 
+								r_color="lightblue" 
+								r_ceilling_color="gray" 
+								r_position="1.1 8.003 -7.2" 
+								n_wall_window="true" 
+								n_wall_window_width="1.2" 
+								n_wall_window_height="2" 
+								n_wall_window_position="1 -1">
+				</a-room>
+			</a-room>
+			<!--FRONT Corrider-->
+			<!--lower back wall-->
+			<a-room r_length="8" 
+							r_breath="0.2" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_color="lightblue" 
+							r_ceilling_color="gray" 
+							r_position="0 1.001 -11.05"
+							n_wall_window="true" 
+							n_wall_window_width="1" 
+							n_wall_window_height="1.2" 
+							n_wall_window_position="-0.3 0.9">
+				<!--right back space lower wall-->
+				<a-room r_color="lightblue" 
+								r_length="1.65" 
+								r_breath="0.2" 
+								r_height="3.3" 
+								r_thickness="0.2" 
+								r_ceilling_color="gray" 
+								r_position="-4.1 1.001 -10.325" 
+								r_rotation="0 90 0">
+				</a-room>
+				<!--right back space upper wall-->
+				<a-room r_color="lightblue" 
+								r_length="1.65" 
+								r_breath="0.2" 
+								r_height="3.3" 
+								r_thickness="0.2" 
+								r_ceilling_color="gray" 
+								r_position="-4.1 4.502 -10.325" 
+								r_rotation="0 90 0">
+				</a-room>
+				<!--left back space lower wall-->
+				<a-room r_color="lightblue" 
+								r_length="1.65" 
+								r_breath="0.2" 
+								r_height="3.3" 
+								r_thickness="0.2" 
+								r_ceilling_color="gray" 
+								r_position="4.1 1.001 -10.325" 
+								r_rotation="0 90 0">
+				</a-room>
+				<!--left back space upper wall-->
+				<a-room r_color="lightblue" 
+								r_length="1.65" 
+								r_breath="0.2" 
+								r_height="3.3" 
+								r_thickness="0.2" 
+								r_ceilling_color="gray" 
+								r_position="4.1 4.502 -10.325" 
+								r_rotation="0 90 0">
+				</a-room>
+			</a-room>
+			<!--upper back wall-->
+			<a-room r_length="8" 
+							r_breath="0.2" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_color="lightblue" 
+							r_ceilling_color="gray" 
+							r_position="0 4.502 -11.05"
+							n_wall_window="true" 
+							n_wall_window_width="1" 
+							n_wall_window_height="1.2" 
+							n_wall_window_position="-0.3 0.9">
+			</a-room>
+			<!--LIFT left wall-->
+			<a-box color="lightblue" 
+						 width="3.65" 
+						 height="6.8" 
+						 depth="0.2" 
+						 position="-1.9 4.4 -9.125" 
+						 rotation="0 90 0">
+			</a-box>
+			<!--LIFT front right wall-->
+			<a-box width="0.5" 
+						 height="6.8" 
+						 depth="0.2" 
+						 position="-3.75 4.4 -7.4" 
+						 color="lightblue">
+			</a-box>
+			<!--LIFT front left wall-->
+			<a-box width="0.5" 
+						 height="6.8" 
+						 depth="0.2" 
+						 position="-2.25 4.4 -7.4" 
+						 color="lightblue">
+			</a-box>
+			<a-box position="-3 2.65 -8.4" 
+						 width="2" 
+						 height="3.3" 
+						 depth="1.8"
+						 color="purple" 
+						 open-ended="true" 
+						 animation="property: object3D.position.y; to: 6.15; dir: alternate; dur: 2000; loop: false">
+			</a-box>
+			<!--Corrider-->
+			<!--right lower wall-->
+			<a-room r_length="6" 
+							r_breath="0.2" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_ceilling_color="gray" 
+							r_color="lightblue" 
+							r_position="-4.1 1.001 -1.5" 
+							r_rotation="0 90 0" 
+							n_wall_window="true" 
+							n_wall_window_width="3" 
+							n_wall_window_height="2" 
+							n_wall_window_position="0 0.5">
+			</a-room>
+			<!--right upper wall-->
+			<a-room r_length="6" 
+							r_breath="0.2" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_color="lightblue" 
+							r_ceilling_color="gray" 
+							r_position="-4.1 4.502 -1.5" 
+							r_rotation="0 90 0" 
+							n_wall_window="true" 
+							n_wall_window_width="3" 
+							n_wall_window_height="2" 
+							n_wall_window_position="0 0.5">
+			</a-room>
+			<!--LEFT lower wall-->
+			<a-room r_length="6" 
+							r_breath="0.2" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_color="lightblue" 
+							r_ceilling_color="gray" 
+							r_position="4.1 1.001 -1.5" 
+							r_rotation="0 90 0" 
+							n_wall_window="true" 
+							n_wall_window_width="3" 
+							n_wall_window_height="2" 
+							n_wall_window_position="0 0.5">
+			</a-room>
+			<!--LEFT upper wall-->
+			<a-room r_length="6" 
+							r_breath="0.2" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_color="lightblue" 
+							r_ceilling_color="gray" 
+							r_position="4.1 4.502 -1.5" 
+							r_rotation="0 90 0" 
+							n_wall_window="true" 
+							n_wall_window_width="3" 
+							n_wall_window_height="2" 
+							n_wall_window_position="0 0.5">
+			</a-room>
+			<!--front gate lower wall-->
+			<a-room r_length="8" 
+							r_breath="0.2" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_ceilling_color="gray" 
+							r_color="lightblue" 
+							r_position="0 1.001 1.4" 
+							r_rotation="0 0 0" 
+							n_wall_window="true" 
+							n_wall_window_width="4" 
+							n_wall_window_height="2.5" 
+							n_wall_window_position="0 -1">
+			</a-room>
+			<!--front gate upper wall-->
+			<a-room r_length="8" 
+							r_breath="0.2" 
+							r_height="3.3" 
+							r_thickness="0.2" 
+							r_color="lightblue" 
+							r_ceilling_color="gray" 
+							r_position="0 4.502 1.4" 
+							r_rotation="0 0 0" 
+							n_wall_window="true" 
+							n_wall_window_width="4" 
+							n_wall_window_height="2.5" 
+							n_wall_window_position="0 -0.7">
+			</a-room>
+			<!--building front-->
+			<!--Building entry small stair-->
+			<a-stair stair_color="lightblue" 
+							 stair_length="1.5" 
+							 stair_breath="6" 
+							 stair_height="1" 
+							 stair_quantity="4" 
+							 stair_position="0 0.5 4.25">
+			</a-stair>
+			<!-- right piller 1-->
+			<a-box width="0.5" 
+						 height="3.3" 
+						 depth="0.5" 
+						 position="-2.75 2.65 3.25" 
+						 color="lightblue">
+			</a-box>
+			<!--left pilller 1-->
+			<a-box width="0.5" 
+						 height="3.3" 
+						 depth="0.5" 
+						 position="2.75 2.65 3.25" 
+						 color="lightblue">
+			</a-box>
+			<!-- right piller 2-->
+			<a-box width="0.5" 
+						 height="4.3" 
+						 depth="0.5" 
+						 position="-2.75 2.15 7.25" 
+						 color="lightblue">
+			</a-box>
+			<!--left pilller 2-->
+			<a-box width="0.5" 
+						 height="4.3" 
+						 depth="0.5" 
+						 position="2.75 2.15 7.25" 
+						 color="lightblue">
+			</a-box>
+			<!--ceiling-->
+			<a-box width="7" 
+						 height="6.5" 
+						 depth="0.2"
+						 position="0 4.4 4.75" 
+						 rotation="-90 0 0" 
+						 color="gray">
+			</a-box>
+			<!--STAIR-->
+			<!--stair range [1-6]-> gound level to upper-->
+			<!--stair : 1-->
+			<a-stair stair_length="1.8" 
+							 stair_breath="1.5" 
+							 stair_height="1" 
+							 stair_quantity="6" 
+							 stair_position="-1.05 1.5 -8.55" 
+							 stair_color="lightblue">
+				<a-box color="lightblue"
+							 width="1.5" 
+							 height="1.5" 
+							 depth="0.1625"
+							 rotation="-90 0 0" 
+							 position="-1.05 1.915 -10.2">
+				</a-box>
+			</a-stair>
+			<!--stair : 2-->
+			<a-stair stair_length="2.81" 
+							 stair_breath="1.5" 
+							 stair_height="1.5" 
+							 stair_quantity="10" 
+							 stair_position="1.1 2.75 -10.2" 
+							 stair_rotation="0 -90 0"
+							 stair_color="lightblue">
+				<a-box color="lightblue" 
+							 width="1.5" 
+							 height="1.5" 
+							 depth="0.1625" 
+							 rotation="-90 0 0" 
+							 position="3.25 3.43 -10.2">
+				</a-box>
+			</a-stair>
+			<!--stair : 3-->
+			<a-stair stair_length="1.8" 
+							 stair_breath="1.5" 
+							 stair_height="1" 
+							 stair_quantity="6" 
+							 stair_position="3.25 4 -8.55" 
+							 stair_rotation="0 -180 0"
+							 stair_color="lightblue">
+				<a-box color="gray" 
+							 width="5.8" 
+							 height="0.359" 
+							 depth="0.2" 
+							 rotation="-90 0 0" 
+							 position="1.1 4.4 -7.472">
+				</a-box>
+			</a-stair>
+			<!--stair : 4-->
+			<a-stair stair_length="1.8" 
+							 stair_breath="1.5" 
+							 stair_height="1" 
+							 stair_quantity="6" 
+							 stair_position="-1.05 5 -8.55" 
+							 stair_color="lightblue">
+				<a-box color="lightblue"
+							 width="1.5" 
+							 height="1.5" 
+							 depth="0.1625"
+							 rotation="-90 0 0" 
+							 position="-1.05 5.415 -10.2">
+				</a-box>
+			</a-stair>
+			<!--stair : 5-->
+			<a-stair stair_length="2.81" 
+							 stair_breath="1.5" 
+							 stair_height="1.5" 
+							 stair_quantity="10" 
+							 stair_position="1.1 6.25 -10.2" 
+							 stair_rotation="0 -90 0"
+							 stair_color="lightblue">
+				<a-box color="lightblue" 
+							 width="1.5" 
+							 height="1.5" 
+							 depth="0.1625" 
+							 rotation="-90 0 0" 
+							 position="3.25 6.93 -10.2">
+				</a-box>
+			</a-stair>
+			<!--stair : 6-->
+			<a-stair stair_length="1.8" 
+							 stair_breath="1.5" 
+							 stair_height="1" 
+							 stair_quantity="6" 
+							 stair_position="3.25 7.5 -8.55" 
+							 stair_rotation="0 -180 0"
+							 stair_color="lightblue">
+				<a-box color="gray" 
+							 width="5.8" 
+							 height="0.359" 
+							 depth="0.2" 
+							 rotation="-90 0 0" 
+							 position="1.1 7.902 -7.472">
+				</a-box>
+			</a-stair>
+			<!--chair : 7-->
+			<a-chair id="chair-1" color="maroon" ch_rotation="0 180 0" ch_position="20 4.850 -2.510" chair></a-chair>
+			<a-chair id="chair-2" color="maroon" ch_rotation="0 180 0" ch_position="21 4.850 -2.510" chair></a-chair>
+			<a-chair id="chair-3" color="maroon" ch_rotation="0 180 0" ch_position="22 4.850 -2.510" chair></a-chair>
+			<a-chair id="chair-4" color="maroon" ch_rotation="0 180 0" ch_position="20 4.850 -1.510" chair></a-chair>
+			<a-chair id="chair-5" color="maroon" ch_rotation="0 180 0" ch_position="21 4.850 -1.510" chair></a-chair>
+			<a-chair id="chair-6" color="maroon" ch_rotation="0 180 0" ch_position="22 4.850 -1.510" chair></a-chair>
+			<a-chair id="chair-7" color="maroon" ch_rotation="0 -90 0" ch_position="23 4.850 -5.750" chair></a-chair>
+
+			<!--Desk and chair : 6-->
+			<a-desk id="desk-1"
+							position="22 4.320 -6"
+            	rotation="0 90 0"
+            	size="2.5 1.2 0.9"
+            	color="#c0c0c0"
+            	metalcolor="maroon"
+            	thickness="0.04"
+            	twodrawers="true">
+       </a-desk
+			
+			<!--Slideshow-->
+			<a-plane src="#slide-1" id="screen" position="17.24 6.152 -8.718" color="white" 
+    		width="3.5" height="2" side="double" rotation="0 90 0" slide-show>
+
+      		<a-plane src="#previous-slide" class="goPrevious" id="previous" position="-0.323 -1.279 0" color="white" 
+      		width="0.4" height="0.4" side="double">Previous-Button</a-plane>
+
+      		<a-plane src="#next-slide" class="goNext" id="next" position="0.527 -1.279 0" width="0.4" height="0.4" color="white" 
+      		side="double">Next-Button</a-plane>
+
+    		</a-plane>
+
+			<!--Standee-->
+			<a-standee
+				id="standee-1"
+            	position="17.833 4.474 -2.862"
+            	rotate="0 75 0" 
+            	size="1.5 1.5 0.5"
+            	color="#243d40"
+            	thickness="0.02"
+            	poster="https://tinyurl.com/yjxjnawk"
+            	aspect="1.333"
+            	backposter="https://tinyurl.com/25p7z7uz"
+            	backaspect="1.333">
+        	</a-standee>
+
+
+			 <a-camera position="0 6 25"></a-camera> 
+			</a-desk>
+		</a-scene>
+	</body>
+</html>
